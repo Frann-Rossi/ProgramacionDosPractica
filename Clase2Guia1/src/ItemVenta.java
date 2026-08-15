@@ -1,0 +1,62 @@
+public class ItemVenta {
+    private static int cont = 0;
+    private int id;
+    private String descripcion;
+    private int cantidad;
+    private double precioUnitario;
+
+    public ItemVenta() {
+    }
+
+    public ItemVenta(String descripcion, int cantidad, double precioUnitario) {
+        this.id = cont;
+        cont++;
+        this.descripcion = descripcion;
+        this.cantidad = cantidad;
+        this.precioUnitario = precioUnitario;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public double getPrecioUnitario() {
+        return precioUnitario;
+    }
+
+    public void setPrecioUnitario(double precioUnitario) {
+        this.precioUnitario = precioUnitario;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", descripcion='" + descripcion + '\'' +
+                ", cantidad=" + cantidad +
+                ", precioUnitario=" + precioUnitario +
+                ", pTotal=" + calcularPrecioTotal() +
+                '}';
+    }
+
+    public double calcularPrecioTotal() {
+        return precioUnitario * cantidad;
+    }
+
+}
