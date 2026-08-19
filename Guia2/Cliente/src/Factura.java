@@ -2,17 +2,23 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class Factura {
-    private String id;
+    private UUID id;
     private double montoTotal;
     private LocalDateTime fechaHora;
+    private  Cliente cliente;
 
-    public Factura(double montoTotal) {
-        this.id = UUID.randomUUID().toString();
+    public Factura(double montoTotal,Cliente cliente) {
+        this.id = UUID.randomUUID();
         this.montoTotal = montoTotal;
         this.fechaHora = LocalDateTime.now();
+        this.cliente = cliente;
     }
 
-    public String getId() {
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public UUID getId() {
         return id;
     }
 
@@ -31,9 +37,15 @@ public class Factura {
     @Override
     public String toString() {
         return "Factura{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", montoTotal=" + montoTotal +
                 ", fechaHora=" + fechaHora +
+                ", cliente=" + cliente +
                 '}';
+    }
+
+    public double descuneto ()
+    {
+        return  montoTotal - (montoTotal * cliente.getDescuento() / 100);
     }
 }
