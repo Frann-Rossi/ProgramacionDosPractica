@@ -37,7 +37,7 @@ public class Circulo {
     }
 
     public double calcularArea() {
-        return Math.PI * radio * radio;
+        return Math.PI * Math.pow(radio,2);
     }
 
     public String mostrarInfo() {
