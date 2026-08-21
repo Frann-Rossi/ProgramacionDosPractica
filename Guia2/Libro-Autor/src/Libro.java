@@ -53,17 +53,30 @@ public class Libro {
                 '}';
     }
 
-//    public void msj() {
-//        StringBuilder sb = new StringBuilder();
+//    public double aumentarStock(int cant) {
+//        return stock + cant;
+//    }
 //
-//        sb.append("El libro, ");
-//        sb.append(titulo);
-//        sb.append(" de ");
-//        sb.append(autor.getNombre());
-//        sb.append(". Se vende a ");
-//        sb.append(precio);
-//        sb.append(" pesos. ");
-//        System.out.println(sb);
+//    public double disminuirStock(int cant) {
+//        return stock - cant;
+//    }
+
+    public void aumentarStock(int cantidad) {
+        if (cantidad > 0) {
+            stock += cantidad;
+        }
+    }
+
+    public void disminuirStock(int cantidad) {
+        if (cantidad > 0 && cantidad <= stock) {
+            stock -= cantidad;
+        }
+    }
+
+//    public String msj() {
+//        return "El libro, " + titulo +
+//                " de " + autor.getNombre() +
+//                ". Se vende a " + precio + " pesos.";
 //    }
 
     public String msj() {
