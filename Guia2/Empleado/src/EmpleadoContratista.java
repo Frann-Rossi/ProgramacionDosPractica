@@ -1,39 +1,50 @@
 public class EmpleadoContratista extends Empleado {
-    private int salarioPorHoras;
-    private int tarifaProtecto;
+    private int horasTrabajadas;
+    private double valorHora;
+    private double tarifaProyecto;
 
-    public EmpleadoContratista(String nombre, int salarioPorHoras, int tarifaProtecto) {
+    public EmpleadoContratista(String nombre, int horasTrabajadas, double valorHora, double tarifaProyecto) {
         super(nombre);
-        this.salarioPorHoras = salarioPorHoras;
-        this.tarifaProtecto = tarifaProtecto;
+        this.horasTrabajadas = horasTrabajadas;
+        this.valorHora = valorHora;
+        this.tarifaProyecto = tarifaProyecto;
     }
 
-    public int getSalarioPorHoras() {
-        return salarioPorHoras;
+    public int getHorasTrabajadas() {
+        return horasTrabajadas;
     }
 
-    public void setSalarioPorHoras(int salarioPorHoras) {
-        this.salarioPorHoras = salarioPorHoras;
+    public void setHorasTrabajadas(int horasTrabajadas) {
+        this.horasTrabajadas = horasTrabajadas;
     }
 
-    public int getTarifaProtecto() {
-        return tarifaProtecto;
+    public double getValorHora() {
+        return valorHora;
     }
 
-    public void setTarifaProtecto(int tarifaProtecto) {
-        this.tarifaProtecto = tarifaProtecto;
+    public void setValorHora(double valorHora) {
+        this.valorHora = valorHora;
+    }
+
+    public double getTarifaProyecto() {
+        return tarifaProyecto;
+    }
+
+    public void setTarifaProyecto(double tarifaProyecto) {
+        this.tarifaProyecto = tarifaProyecto;
     }
 
     @Override
     public String toString() {
         return "EmpleadoContratista{" +
-                "salarioPorHoras=" + salarioPorHoras +
-                ", tarifaProtecto=" + tarifaProtecto +
-                '}';
+                "horasTrabajadas=" + horasTrabajadas +
+                ", valorHora=" + valorHora +
+                ", tarifaProyecto=" + tarifaProyecto +
+                "} " + super.toString();
     }
 
     @Override
     public double calcularPago() {
-        return getSalarioPorHoras() + getTarifaProtecto();
+        return (horasTrabajadas * valorHora) + tarifaProyecto;
     }
 }

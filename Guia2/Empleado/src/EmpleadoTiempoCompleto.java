@@ -1,5 +1,3 @@
-import java.util.StringJoiner;
-
 public class EmpleadoTiempoCompleto extends Empleado {
 
     private double salarioMensual;
@@ -26,6 +24,6 @@ public class EmpleadoTiempoCompleto extends Empleado {
 
     @Override
     public double calcularPago() {
-        return getSalarioMensual();
+        return salarioMensual;
     }
 }
