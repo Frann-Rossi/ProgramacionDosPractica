@@ -26,14 +26,14 @@ public class Parlante extends Dispositivo implements IEncendible {
     }
 
     @Override
-    public String encendido() {
+    public Boolean encender() {
 
         setEncendido(true);
         return "Encendiendo parlante...";
     }
 
     @Override
-    public String apagado() {
+    public Boolean apagar() {
         setEncendido(false);
         return "Apagando parlante...";
     }

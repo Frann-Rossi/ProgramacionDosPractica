@@ -11,8 +11,13 @@ public abstract class Dispositivo {
         return encendido;
     }
 
-    public void setEncendido(boolean encendido) {
-        this.encendido = encendido;
+    public Boolean encender() {
+        if (isEncendido()) return false;
+        this.encendido = true;
+        return true;
+    }
+    public Boolean apagar() {
+        this.encendido = false;
     }
 
     @Override

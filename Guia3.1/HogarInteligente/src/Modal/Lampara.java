@@ -25,15 +25,5 @@ public class Lampara extends Dispositivo implements IEncendible {
                 "} " + super.toString();
     }
 
-    @Override
-    public String encendido() {
-        setEncendido(true);
-        return "Encendiendo lampara...";
-    }
 
-    @Override
-    public String apagado() {
-        setEncendido(false);
-        return "Apagando lampara...";
-    }
 }

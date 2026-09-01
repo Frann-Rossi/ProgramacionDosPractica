@@ -26,13 +26,13 @@ public class Termostato extends Dispositivo implements IEncendible {
     }
 
     @Override
-    public String encendido() {
+    public Boolean encender() {
         setEncendido(true);
         return "Encendiendo termostato...";
     }
 
     @Override
-    public String apagado() {
+    public Boolean apagar() {
         setEncendido(false);
         return "Apagando termostato...";
     }

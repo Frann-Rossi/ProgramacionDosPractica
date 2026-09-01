@@ -1,6 +1,6 @@
 package Interface;
 
 public interface IEncendible {
-    String encendido();
-    String apagado();
+    Boolean encender();
+    Boolean apagar();
 }
