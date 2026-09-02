@@ -8,6 +8,11 @@ public class Libro {
     private  double precio;
     private  int anio;
 
+    public Libro(String titulo, String autor) {
+        this.titulo = titulo;
+        this.autor = autor;
+    }
+
     public Libro(String titulo, String autor, double precio, int anio) {
         this.titulo = titulo;
         this.autor = autor;
