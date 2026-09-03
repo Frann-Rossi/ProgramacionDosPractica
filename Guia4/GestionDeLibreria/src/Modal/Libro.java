@@ -2,10 +2,10 @@ package Modal;
 
 import java.util.Objects;
 
-public class Libro {
+public class Libro implements Comparable<Libro>{
     private String titulo;
     private  String autor;
-    private  double precio;
+    private  Double precio;
     private  int anio;
 
     public Libro(String titulo, String autor) {
@@ -36,11 +36,11 @@ public class Libro {
         this.autor = autor;
     }
 
-    public double getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
 
@@ -71,5 +71,10 @@ public class Libro {
                 ", precio=" + precio +
                 ", anio=" + anio +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Libro o) {
+        return precio.compareTo(o.precio);
     }
 }

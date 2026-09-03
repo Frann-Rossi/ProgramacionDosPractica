@@ -86,12 +86,11 @@ public class Inventario {
 //    }
 
     public Libro libroMasCaro() {
-        return Collections.max(libros,Comparator.comparing(Libro::getPrecio)
-        );
+        return Collections.max(libros);
     }
 
     public Libro libroMenosCaro(){
-        return Collections.min(libros,Comparator.comparing(Libro::getPrecio));
+        return Collections.min(libros);
     }
 
 }
