@@ -24,16 +24,4 @@ public class Termostato extends Dispositivo implements IEncendible {
                 "temperatura='" + temperatura + '\'' +
                 "} " + super.toString();
     }
-
-    @Override
-    public Boolean encender() {
-        setEncendido(true);
-        return "Encendiendo termostato...";
-    }
-
-    @Override
-    public Boolean apagar() {
-        setEncendido(false);
-        return "Apagando termostato...";
-    }
 }

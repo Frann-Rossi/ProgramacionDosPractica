@@ -1,7 +1,7 @@
 package Modal;
 
 public abstract class Dispositivo {
-    private  boolean encendido;
+    private boolean encendido;
 
     public Dispositivo() {
         this.encendido = false;
@@ -16,8 +16,11 @@ public abstract class Dispositivo {
         this.encendido = true;
         return true;
     }
+
     public Boolean apagar() {
+        if (!isEncendido()) return false;
         this.encendido = false;
+        return true;
     }
 
     @Override
