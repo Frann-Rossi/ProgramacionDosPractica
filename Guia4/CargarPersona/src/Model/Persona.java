@@ -4,6 +4,11 @@ import java.util.Objects;
 import java.util.Random;
 
 public class Persona {
+    private static final char SEXO_DEFECTO = 'H';
+    private static final int BAJO_PESO = -1;
+    private static final int PESO_IDEAL = 0;
+    private static final int SOBREPESO = 1;
+
     private  String nombre;
     private Integer edad;
     private final String dni;
@@ -16,7 +21,7 @@ public class Persona {
         this.nombre = "";
         this.edad = 0;
         this.dni = String.valueOf(generaDNI());;
-        this.sexo = 'H';
+        this.sexo = SEXO_DEFECTO;
         this.peso = 0.0;
         this.altura = 0.0;
     }
@@ -112,13 +117,13 @@ public class Persona {
         int res;
         if(imc < 20)
         {
-            res = -1;
+            res = BAJO_PESO;
         } else if (imc >= 20 && imc <= 25) {
-            res = 0;
+            res = PESO_IDEAL;
         }
         else
         {
-            res = 1;
+            res = SOBREPESO;
         }
         return res;
     }
@@ -136,10 +141,10 @@ public class Persona {
         return 'H';
     }
 
-    public long generaDNI()
+    private long generaDNI()
     {
         Random random = new Random();
-        return random.nextInt(99999999) + 10000000;
+        return random.nextInt(90000000) + 10000000;
     }
 
 
