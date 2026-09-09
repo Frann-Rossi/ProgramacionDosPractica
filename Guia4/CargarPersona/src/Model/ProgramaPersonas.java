@@ -13,24 +13,13 @@ public class ProgramaPersonas {
         return personas;
     }
 
-    public void setPersonas(HashMap<String, Persona> personas) {
-        this.personas = personas;
-    }
-
     public void  agregarUnaPesona(Persona persona)
     {
         personas.put(persona.getDni(),persona);
     }
 
-    public void agregarPersonas(Persona[] personas) {
-        for (Persona persona : personas) {
-            agregarUnaPesona(persona);
-        }
-    }
-
-
-    public void eliminarUnaPersona(Persona persona)
+    public void eliminarUnaPersona(String dni)
     {
-        personas.remove(persona.getDni());
+        personas.remove(dni);
     }
 }
