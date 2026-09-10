@@ -23,14 +23,24 @@ public class Hangar {
         return flota;
     }
 
-    public boolean agregarFlota(Avion avion)
+    public boolean agregarAvion(Avion avion)
     {
        return flota.add(avion);
     }
 
-    public boolean quitarFlota(Avion avion)
+    public boolean quitarAvion(Avion avion)
     {
         return flota.remove(avion);
+    }
+
+    public String mostrarAviones()
+    {
+        StringBuilder sb = new StringBuilder();
+        for (Avion avion : flota)
+        {
+            sb.append(avion.toString() + '\n');
+        }
+        return  sb.toString();
     }
 
     @Override

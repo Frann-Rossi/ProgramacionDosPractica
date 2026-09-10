@@ -18,15 +18,6 @@ public class Aeropuerto {
         this.hangares = new HashMap<>();
     }
 
-    public boolean agregarAvion(Avion avion){
-        String tipoAvion = avion.getTipo().toString();
-        if(!hangares.containsKey(tipoAvion))
-        {
-            hangares.put(tipoAvion,new Hangar(tipoAvion));
-        }
-        return hangares.get(tipoAvion).agregarFlota(avion);
-    }
-
     public String getNombre() {
         return nombre;
     }
@@ -75,4 +66,24 @@ public class Aeropuerto {
     public int hashCode() {
         return Objects.hashCode(identificador);
     }
+
+    public boolean agregarAvion(Avion avion){
+        String tipoAvion = avion.getTipo().toString();
+        if(!hangares.containsKey(tipoAvion))
+        {
+            hangares.put(tipoAvion,new Hangar(tipoAvion));
+        }
+        return hangares.get(tipoAvion).agregarAvion(avion);
+    }
+
+    public  boolean quitarAvion(Avion avion)
+    {
+        String tipoAvion = avion.getTipo().toString();
+        if(!hangares.containsKey(tipoAvion)){
+            return  false;
+        }
+        return  hangares.get(tipoAvion).quitarAvion(avion);
+    }
+
+    public void mostrar
 }
