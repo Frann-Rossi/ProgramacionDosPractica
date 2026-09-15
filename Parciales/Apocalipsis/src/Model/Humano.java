@@ -6,22 +6,16 @@ import Interface.IAtacar;
 import java.util.Objects;
 
 public class Humano implements IAtacar {
-    private static int cont = 0;
     private final int id;
     private String nombre;
     private  int edad;
     private EFaccion faccion;
 
     public Humano(String nombre, int edad,EFaccion faccion) {
-        this.id = cont;
-        cont++;
+        this.id = GeneradorID.getSiguienteId();
         this.nombre = nombre;
         this.edad = edad;
         this.faccion = faccion;
-    }
-
-    public static int getCont() {
-        return cont;
     }
 
     public int getId() {

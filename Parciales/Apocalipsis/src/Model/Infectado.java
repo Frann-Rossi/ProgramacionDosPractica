@@ -5,22 +5,16 @@ import Interface.IAtacar;
 import java.util.Objects;
 
 public abstract class Infectado implements IAtacar {
-    private static int contador = 0;
     private final int id;
     private String nombre;
     private String origen;
     private int humanosInfectados;
 
     public Infectado(String nombre, String origen, int humanosInfectados) {
-        this.id = contador;
-        contador++;
+        this.id = GeneradorID.getSiguienteId();
         this.nombre = nombre;
         this.origen = origen;
         this.humanosInfectados = humanosInfectados;
-    }
-
-    public static int getContador() {
-        return contador;
     }
 
     public int getId() {
