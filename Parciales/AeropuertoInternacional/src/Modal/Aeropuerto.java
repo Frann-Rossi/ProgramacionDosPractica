@@ -101,7 +101,10 @@ public class Aeropuerto {
             sb.append("Hangar: ").append(nombreHangar).append('\n');
             sb.append(hangar.mostrarAvionesHangar()).append('\n');
         }
-
+//        for(String tipo: hangares.keySet())
+//            {
+//                sb.append("\nHangar "+ tipo + ": \n { "+ hangares.get(tipo).mostrarAvionesHangar() +" } ");
+//            }
 //        for (Map.Entry<String, Hangar> entry : hangares.entrySet()) {
 //            String nombreHangar = entry.getKey();
 //            Hangar hangar = entry.getValue();
