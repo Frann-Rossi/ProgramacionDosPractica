@@ -33,7 +33,7 @@ public class Hangar {
         return flota.remove(avion);
     }
 
-    public String mostrarAviones()
+    public String mostrarAvionesHangar()
     {
         StringBuilder sb = new StringBuilder();
         for (Avion avion : flota)
@@ -47,7 +47,7 @@ public class Hangar {
     public String toString() {
         return "Hangar{" +
                 "nombre='" + nombre + '\'' +
-                ", flota=" + flota +
+                ", flota=" + mostrarAvionesHangar() +
                 '}';
     }
 }

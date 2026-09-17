@@ -1,6 +1,8 @@
 package Modal;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Objects;
 
 public class Aeropuerto {
@@ -85,5 +87,30 @@ public class Aeropuerto {
         return  hangares.get(tipoAvion).quitarAvion(avion);
     }
 
-    public void mostrar
+    public String mostrarAvionesAeropuerto()
+    {
+       StringBuilder sb = new StringBuilder();
+        Iterator<Map.Entry<String,Hangar>> it = hangares.entrySet().iterator();
+        while (it.hasNext())
+        {
+            Map.Entry<String, Hangar> entry = it.next();
+
+            String nombreHangar = entry.getKey();
+            Hangar hangar = entry.getValue();
+
+            sb.append("Hangar: ").append(nombreHangar).append('\n');
+            sb.append(hangar.mostrarAvionesHangar()).append('\n');
+        }
+
+//        for (Map.Entry<String, Hangar> entry : hangares.entrySet()) {
+//            String nombreHangar = entry.getKey();
+//            Hangar hangar = entry.getValue();
+//
+//            sb.append("Hangar: ").append(nombreHangar).append('\n');
+//            sb.append(hangar.mostrarAvionesHangar()).append('\n');
+//        }
+        return sb.toString();
+    }
 }
+
+
