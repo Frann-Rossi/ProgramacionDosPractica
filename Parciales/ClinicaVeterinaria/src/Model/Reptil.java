@@ -35,4 +35,9 @@ public final class Reptil extends Animal {
                 ", venenosos=" + venenosos +
                 "} " + super.toString();
     }
+
+    @Override
+    public String alimentar() {
+        return "Estoy comiendo soy un " + getNombre();
+    }
 }
