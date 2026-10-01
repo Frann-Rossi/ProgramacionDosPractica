@@ -56,11 +56,12 @@ public class Alumno {
         this.promedio = promedio;
     }
 
-    public boolean isEstado() {
+
+    public EEstado getEstado() {
         return estado;
     }
 
-    public void setEstado(boolean estado) {
+    public void setEstado(EEstado estado) {
         this.estado = estado;
     }
 
