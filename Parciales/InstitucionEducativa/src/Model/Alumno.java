@@ -11,6 +11,10 @@ public class Alumno {
     private  float promedio;
     private EEstado estado;
 
+    public Alumno(int dni) {
+        this.dni = dni;
+    }
+
     public Alumno(int dni, String nombre, String apellido, int edad, float promedio) {
         this.dni = dni;
         this.nombre = nombre;

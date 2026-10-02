@@ -12,14 +12,23 @@ public class Curso {
         this.alumnos = new HashSet<>();
     }
 
-    public boolean agregarAlumonos(Alumno alumno)
+    public String getNombreCurso() {
+        return nombreCurso;
+    }
+
+    public void setNombreCurso(String nombreCurso) {
+        this.nombreCurso = nombreCurso;
+    }
+
+    public boolean agregarAlumnos(Alumno alumno)
     {
         return alumnos.add(alumno);
     }
 
-    public boolean eliminarAlumno(Alumno alumno)
+    public boolean eliminarAlumnos(int dni)
     {
-        return alumnos.remove(alumno);
+        Alumno a = new Alumno(dni);
+        return alumnos.remove(a);
     }
 
     public String mostrarAlumnos()
@@ -32,7 +41,11 @@ public class Curso {
         return sb.toString();
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return "Curso{" +
+                "nombreCurso='" + nombreCurso + '\'' +
+                ", alumnos=" + mostrarAlumnos() +
+                '}';
+    }
 }
