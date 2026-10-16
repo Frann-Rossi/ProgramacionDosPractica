@@ -7,6 +7,12 @@ public class Documento {
     private String contenido;
     private String autor;
 
+
+    public Documento(String titulo, String autor) {
+        this.titulo = titulo;
+        this.autor = autor;
+    }
+
     public Documento(String titulo, String contenido, String autor) {
         this.titulo = titulo;
         this.contenido = contenido;

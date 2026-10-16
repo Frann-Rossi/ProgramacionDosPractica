@@ -43,7 +43,8 @@ public class GestoraAlmacenamientoList implements IAlmacenamiento<Documento,Inte
 
     public int pos (String titulo,String autor)
     {
-        return documentoList.equals(titulo)
+        Documento documentoAux = new Documento(titulo,autor);
+        return documentoList.indexOf(documentoAux);
     }
 
     @Override
