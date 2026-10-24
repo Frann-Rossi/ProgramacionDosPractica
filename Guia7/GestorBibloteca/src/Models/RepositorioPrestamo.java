@@ -17,6 +17,7 @@ public class RepositorioPrestamo implements IRepositorio <Prestamo,Integer> {
         if(!listaPrestamos.containsKey(prestamo.getIdSocio()))
             listaPrestamos.put(prestamo.getIdSocio(),new ArrayList<>());
         return listaPrestamos.get(prestamo.getIdSocio()).add(prestamo);
+        
 
     }
 
