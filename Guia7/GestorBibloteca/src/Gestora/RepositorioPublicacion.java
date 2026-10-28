@@ -1,6 +1,8 @@
-package Models;
+package Gestora;
 
+import Exceptions.PublicacionNoEncontradaException;
 import Interfaces.IRepositorio;
+import Models.Publicacion;
 import org.json.JSONArray;
 
 import java.util.HashSet;
@@ -25,7 +27,8 @@ public class RepositorioPublicacion implements IRepositorio<Publicacion,Integer>
     }
 
     @Override
-    public Publicacion buscarPorId(Integer id) {
+    public Publicacion buscarPorId(Integer id) throws PublicacionNoEncontradaException {
+
         for(Publicacion p : listaPublicacion)
         {
             if(p.getId() == id)
@@ -33,7 +36,7 @@ public class RepositorioPublicacion implements IRepositorio<Publicacion,Integer>
                 return p;
             }
         }
-        return null;
+        throw new PublicacionNoEncontradaException();
     }
 
     @Override

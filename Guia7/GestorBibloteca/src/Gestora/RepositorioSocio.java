@@ -1,6 +1,8 @@
-package Models;
+package Gestora;
 
+import Exceptions.SocioNoEncontradoException;
 import Interfaces.IRepositorio;
+import Models.Socio;
 import org.json.JSONArray;
 
 import java.util.HashMap;
@@ -19,8 +21,11 @@ public class RepositorioSocio implements IRepositorio<Socio,Integer> {
     }
 
     @Override
-    public Socio buscarPorId(Integer id) {
-        return listaSocios.get(id);
+    public Socio buscarPorId(Integer id) throws SocioNoEncontradoException {
+        Socio socio =listaSocios.get(id);
+        if(socio ==  null)
+            throw new SocioNoEncontradoException();
+        return socio;
     }
 
     @Override

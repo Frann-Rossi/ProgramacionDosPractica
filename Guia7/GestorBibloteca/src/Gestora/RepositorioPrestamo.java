@@ -1,6 +1,7 @@
-package Models;
+package Gestora;
 
 import Interfaces.IRepositorio;
+import Models.Prestamo;
 import org.json.JSONArray;
 
 import java.util.*;
@@ -17,8 +18,6 @@ public class RepositorioPrestamo implements IRepositorio <Prestamo,Integer> {
         if(!listaPrestamos.containsKey(prestamo.getIdSocio()))
             listaPrestamos.put(prestamo.getIdSocio(),new ArrayList<>());
         return listaPrestamos.get(prestamo.getIdSocio()).add(prestamo);
-        
-
     }
 
     @Override
@@ -26,6 +25,18 @@ public class RepositorioPrestamo implements IRepositorio <Prestamo,Integer> {
         if(!listaPrestamos.containsKey(id))
             return null;
         return (Prestamo) listaPrestamos.get(id);
+    }
+
+    public Prestamo buscarPorId2(Integer id) {
+        for(List<Prestamo> lista : listaPrestamos.values()){
+            for(Prestamo p : lista)
+            {
+                if(p.getId() == id){
+                    return p;
+                }
+            }
+        }
+        return null;
     }
 
     @Override

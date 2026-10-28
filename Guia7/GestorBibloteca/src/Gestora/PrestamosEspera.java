@@ -1,4 +1,6 @@
-package Models;
+package Gestora;
+
+import Models.Prestamo;
 
 import java.util.HashMap;
 import java.util.LinkedList;

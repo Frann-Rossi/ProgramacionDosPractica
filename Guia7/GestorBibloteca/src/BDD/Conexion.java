@@ -1,14 +1,14 @@
-package Models;
+package BDD;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class GestoraJDBC {
+public class Conexion {
 
-    private Connection conn;
+    private static Connection conn;
 
-    public void createConnection() throws SQLException {
+    public static Connection createConnection() throws SQLException {
         conn = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/gestor_biblioteca",
                 "root",
